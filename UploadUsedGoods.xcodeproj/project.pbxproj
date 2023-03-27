@@ -22,6 +22,11 @@
 		B340123729D16EFC001AF53A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340123629D16EFC001AF53A /* Category.swift */; };
 		B340123A29D17820001AF53A /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340123929D17820001AF53A /* CategoryListViewController.swift */; };
 		B340123C29D178B0001AF53A /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340123B29D178B0001AF53A /* CategoryListViewModel.swift */; };
+		B340123E29D18366001AF53A /* PriceTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340123D29D18366001AF53A /* PriceTextFieldCell.swift */; };
+		B340124029D18376001AF53A /* PriceTextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340123F29D18376001AF53A /* PriceTextFieldCellViewModel.swift */; };
+		B340124229D18698001AF53A /* DetailWriteFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340124129D18698001AF53A /* DetailWriteFormCell.swift */; };
+		B340124429D186AA001AF53A /* DetailWriteFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340124329D186AA001AF53A /* DetailWriteFormCellViewModel.swift */; };
+		B340124629D18859001AF53A /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340124529D18859001AF53A /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		B340123629D16EFC001AF53A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B340123929D17820001AF53A /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		B340123B29D178B0001AF53A /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
+		B340123D29D18366001AF53A /* PriceTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextFieldCell.swift; sourceTree = "<group>"; };
+		B340123F29D18376001AF53A /* PriceTextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		B340124129D18698001AF53A /* DetailWriteFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCell.swift; sourceTree = "<group>"; };
+		B340124329D186AA001AF53A /* DetailWriteFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWriteFormCellViewModel.swift; sourceTree = "<group>"; };
+		B340124529D18859001AF53A /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,7 @@
 			children = (
 				B340122929D16269001AF53A /* MainViewController.swift */,
 				B340122B29D16447001AF53A /* MainViewModel.swift */,
+				B340124529D18859001AF53A /* MainModel.swift */,
 				B340122E29D16BF6001AF53A /* TitleTextFieldCell */,
 				B340123829D17803001AF53A /* CategoryListViewController */,
 				B340122F29D16C0A001AF53A /* PriceTextFieldCell */,
@@ -110,6 +121,8 @@
 		B340122F29D16C0A001AF53A /* PriceTextFieldCell */ = {
 			isa = PBXGroup;
 			children = (
+				B340123D29D18366001AF53A /* PriceTextFieldCell.swift */,
+				B340123F29D18376001AF53A /* PriceTextFieldCellViewModel.swift */,
 			);
 			path = PriceTextFieldCell;
 			sourceTree = "<group>";
@@ -117,6 +130,8 @@
 		B340123029D16C23001AF53A /* DetailWriteFormCell */ = {
 			isa = PBXGroup;
 			children = (
+				B340124129D18698001AF53A /* DetailWriteFormCell.swift */,
+				B340124329D186AA001AF53A /* DetailWriteFormCellViewModel.swift */,
 			);
 			path = DetailWriteFormCell;
 			sourceTree = "<group>";
@@ -219,13 +234,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B340123A29D17820001AF53A /* CategoryListViewController.swift in Sources */,
+				B340123E29D18366001AF53A /* PriceTextFieldCell.swift in Sources */,
 				B340122A29D16269001AF53A /* MainViewController.swift in Sources */,
 				B340120C29D160E2001AF53A /* AppDelegate.swift in Sources */,
 				B340120E29D160E2001AF53A /* SceneDelegate.swift in Sources */,
 				B340123429D16CB6001AF53A /* TitleTextFieldViewModel.swift in Sources */,
 				B340123229D16CA2001AF53A /* TitleTextFieldCell.swift in Sources */,
+				B340124429D186AA001AF53A /* DetailWriteFormCellViewModel.swift in Sources */,
 				B340122C29D16447001AF53A /* MainViewModel.swift in Sources */,
+				B340124029D18376001AF53A /* PriceTextFieldCellViewModel.swift in Sources */,
+				B340124629D18859001AF53A /* MainModel.swift in Sources */,
 				B340123729D16EFC001AF53A /* Category.swift in Sources */,
+				B340124229D18698001AF53A /* DetailWriteFormCell.swift in Sources */,
 				B340123C29D178B0001AF53A /* CategoryListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

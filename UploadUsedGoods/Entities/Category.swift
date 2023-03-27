@@ -2,7 +2,7 @@
 //  Category.swift
 //  UploadUsedGoods
 //
-//  Created by jiweon.lee on 2023/03/27.
+//  Created by wons on 2023/03/27.
 //
 
 import Foundation

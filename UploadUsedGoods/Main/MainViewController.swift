@@ -2,7 +2,7 @@
 //  MainViewController.swift
 //  UploadUsedGoods
 //
-//  Created by jiweon.lee on 2023/03/27.
+//  Created by wons on 2023/03/27.
 //
 
 import UIKit
@@ -41,8 +41,11 @@ class MainViewController: UIViewController {
         navigationItem.setRightBarButton(submitButton, animated: true)
         
         tableView.backgroundColor = .white
-        tableView.register(TitleTextFieldCell.self, forCellReuseIdentifier: "TitleTextFieldCell") // index row 0
-        
+        tableView.register(TitleTextFieldCell.self, forCellReuseIdentifier: "TitleTextFieldCell")   // index row 0
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CategoryCell")            // index row 1
+        tableView.register(PriceTextFieldCell.self, forCellReuseIdentifier: "PriceTextFieldCell")   // index row 2
+        tableView.register(DetailWriteFormCell.self, forCellReuseIdentifier: "DetailWriteFormCell") // index row 3
+        tableView.separatorStyle = .singleLine
         tableView.tableFooterView = UIView()
     }
     
