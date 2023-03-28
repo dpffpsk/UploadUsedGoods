@@ -28,7 +28,76 @@ class MainViewController: UIViewController {
     }
     
     func bind(_ viewModel: MainViewModel) {
+        // 셀 설정
+        viewModel.cellData
+            .drive(tableView.rx.items) { tv, row, data in
+                switch row {
+                case 0:
+                    let cell = tv.dequeueReusableCell(
+                        withIdentifier: String(describing: TitleTextFieldCell.self),
+                        for: IndexPath(row: row, section: 0)
+                    ) as! TitleTextFieldCell
+                    cell.selectionStyle = .none
+                    cell.titleInputField.placeholder = data
+                    cell.bind(viewModel.titleTextFieldCellViewModel)
+                    return cell
+                case 1:
+                    let cell = tv.dequeueReusableCell(
+                        withIdentifier: "CategoryCell",
+                        for: IndexPath(row: row, section: 0)
+                    )
+                    cell.selectionStyle = .none
+                    cell.textLabel?.text = data
+                    cell.accessoryType = .disclosureIndicator
+                    return cell
+                case 2:
+                    let cell = tv.dequeueReusableCell(
+                        withIdentifier: String(describing: PriceTextFieldCell.self),
+                        for: IndexPath(row: row, section: 0)
+                    ) as! PriceTextFieldCell
+                    cell.selectionStyle = .none
+                    cell.priceInputField.placeholder = data
+                    cell.bind(viewModel.priceTextFieldCellViewModel)
+                    return cell
+                case 3:
+                    let cell = tv.dequeueReusableCell(
+                        withIdentifier: String(describing: DetailWriteFormCell.self),
+                        for: IndexPath(row: row, section: 0)
+                    ) as! DetailWriteFormCell
+                    cell.selectionStyle = .none
+                    cell.contentInputView.text = data
+                    cell.bind(viewModel.detailWriteFormCellViewModel)
+                    return cell
+                default:
+                    fatalError()
+                }
+            }
+            .disposed(by: disposeBag)
         
+        // alert
+        viewModel.presentAlert
+            .emit(to: self.rx.setAlert)
+            .disposed(by: disposeBag)
+        
+        // 카테고리 VC 호출
+        viewModel.push
+            .drive(onNext: { viewModel in
+                let viewController = CategoryListViewController()
+                viewController.bind(viewModel)
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
+        
+        // ViewModel로 전달
+        tableView.rx.itemSelected
+            .map { $0.row }
+            .bind(to: viewModel.itemSelected)
+            .disposed(by: disposeBag)
+        
+        // ViewModel로 전달
+        submitButton.rx.tap
+            .bind(to: viewModel.submitButtonTapped)
+            .disposed(by: disposeBag)
     }
     
     func attribute() {
